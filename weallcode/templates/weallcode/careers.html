@@ -1,0 +1,162 @@
+{% extends 'weallcode/_base.html' %}
+
+{% load static %}
+
+{% block page-class %}join-us{% endblock %}
+
+{% block subheader %}
+  {% if messages %}
+    {% include 'weallcode/_messages.html' %}
+  {% endif %}
+
+  <div class="sub-menu">
+    <nav class="grid-container" role="navigation">
+      <ul class="menu">
+        <li><a href="{% url 'weallcode-join-us' %}#volunteer">Volunteer</a></li>
+        <li><a href="{% url 'weallcode-associate-board' %}">Associate Board</a></li>
+        <li><a href="{% url 'weallcode-join-us' %}#donate-form">Donate</a></li>
+        <li><a href="{% url 'weallcode-join-us' %}#sponsorship">Sponsorship</a></li>
+        <li class="active"><a href="{% url 'weallcode-careers' %}">Careers</a></li>
+        <li><a href="{% url 'weallcode-join-us' %}#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+{% endblock subheader %}
+
+{% block messages %}{% endblock %}
+
+{% block content %}
+
+  {% include "weallcode/snippets/hero_image.html" with src="weallcode/images/photos/hero-associate-board.jpg" alt="Associate Board" %}
+
+  <!-- Introduction -->
+  <section id="introduction" class="padding-top-3">
+    <div class="grid-container">
+      <div class="grid-x margin-bottom-2">
+        <div class="cell large-8 padding-right-2">
+          <h1 class="title text-tertiary">Come work with us</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, corporis et earum corrupti hic numquam. Nisi esse reprehenderit fugiat quibusdam. Nostrum tempora consequatur fugiat nam sapiente obcaecati reiciendis repellendus sequi.</p>
+        </div>
+        <div class="cell large-4 position-relative">
+          <div class="aside-title">
+            <div>
+              <span class="text-tertiary display-inline-block">Educate the </span>
+              <span class="text-tertiary display-inline-block">technology </span>
+              <span class="text-secondary display-inline-block">leaders of </span>
+              <span class="text-white display-inline-block">tomorrow</span>
+            </div>
+            <div class="line width-25 bg-primary margin-top-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-x grid-padding-x margin-vertical-2">
+        <div class="cell medium-8">
+          <h3 class="title text-primary">Overview</h3>
+
+          <p>We All Code is a 501(c)3 nonprofit organization dedicated to sparking curiosity in coding among kids aged 7 to 17, with a particular focus on girls, students of color, and underserved students. Our mission is to introduce a diverse group of children to the fun of coding by providing free educational resources and hands-on classes. We envision a world where all children have an equal opportunity to ignite their curiosity through coding.</p>
+        </div>
+      </div>
+
+      <div class="grid-x grid-padding-x margin-vertical-2">
+        <div class="cell medium-8">
+          <h3 class="title text-primary">Open Positions</h3>
+
+          <ul class="list-plus">
+            <li><a href="#development-manager">Development Manager</a></li>
+            <li><a href="#operations">Operations</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include "weallcode/snippets/hero_image.html" with src="weallcode/images/photos/hero-team.jpg" alt="Associate Board" %}
+
+  <!-- More Introduction -->
+  <section id="more-information" class="padding-top-3">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x margin-bottom-3">
+        <div class="cell medium-6">
+          <h3 class="title text-primary">Development Manager</h3>
+        </div>
+        <div class="cell medium-6">
+          <div class="binary-drop-right">
+            <img class="width-100" src="{% static 'weallcode/images/photos/volunteering-2.jpg' %}" alt="Photo of student and mentor in class.">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-x grid-padding-x margin-bottom-3">
+
+        <div class="cell medium-8">
+          <h3 class="title text-primary">Position Overview</h3>
+
+          <p>The Development Manager is a key member of the We All Code staff and is integral in the growth and maintenance of the organization. The Development Manager will be responsible for implementing and managing a strategy focused on expanding and enhancing corporate and foundation relationships and support. They will work closely with the development team to support the implementation of a diversified development strategy, ambitiously aimed at raising $500k this fiscal year.</p>
+
+          <p>Successful candidates will have some experience in grant research and creation, are efficient, organized, assertive, forward-thinking, proactive, and able to interact at all levels of the organization. The Development Manager should be willing and able to work within a budget and to develop creative strategies and partnerships as needed to meet the organization’s needs.</p>
+
+          <p>The ideal candidate is eager, energized, and inspired by We All Code’s mission. New graduates with grant writing experience are encouraged to apply.</p>
+        </div>
+      </div>
+
+      <div class="grid-x grid-padding-x margin-bottom-2">
+        <div class="cell medium-8">
+          <h3 class="title text-primary">Fundraising Goal</h3>
+
+          <p>Each year, the Associate Board works with its liaison(s) from the Board of Directors to establish a fundraising goal for the fall event in addition to the Associate Board give/get requirements.</p>
+        </div>
+      </div>
+
+      <div class="grid-x grid-padding-x margin-bottom-2">
+        <div class="cell medium-6">
+          <h3 class="title text-primary margin-bottom-2">Associate Board Committees</h3>
+
+          <p><strong>Outreach</strong> - The Associate Board Outreach Committee works to increase the reach of We All Code, build a network/pipeline, and ensure that multiple dimensions of We All Code are represented.</p>
+
+          <p><strong>Fundraising</strong> - The Associate Board Fundraising Committee uses creativity and connections, with a We All Code focus, to lead the annual fall event. This Committee focuses on leading the full Associate Board through the process of securing sponsorships, selling tickets, securing silent auction items, and creating an event that is engaging and mission-oriented.</p>
+
+          <p><strong>Volunteer</strong> - The Associate Board Volunteer Committee works to create opportunities that engage the Associate Board members with the mission of the organization in a hands-on, meaningful way that also creates social interaction with each other.</p>
+
+          <h3 class="title text-primary margin-vertical-2">Questions?</h3>
+
+          <p>Please contact us at <a href="mailto:hello@weallcode.org">hello@weallcode.org</a> for any questions or more information.</p>
+
+        </div>
+        <div class="cell medium-6">
+          <div class="binary-drop-right">
+            <img class="width-100" src="{% static 'weallcode/images/photos/volunteering-3-small.jpg' %}" alt="Photo of student and mentor in class.">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center margin-bottom-2">
+        <a class="button large" href="{% url 'weallcode-associate-board' %}#form">Apply to the Associate Board</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section id="form" class="bg-binary padding-vertical-2">
+    <div class="grid-container">
+      <div class="grid-x margin-vertical-3">
+        <div class="cell medium-8 bg-white">
+          <h2 class="title text-primary padding-horizontal-2 padding-top-2">Apply to join the Associate Board</h2>
+          <p class="padding-horizontal-2"><strong>Don't miss this unique opportunity to give back to the Chicago community!</strong></p>
+
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScKzZFNOjjsuRDtEw8VsR98_8MSq38SoyGDdlmfh1ibFJLOcw/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+        <div class="cell medium-4 bg-dark-blue text-white padding-2">
+          <div class="line bg-secondary width-25 margin-bottom-3"></div>
+          <div class="text-huge text-uppercase text-bold line-height-1 margin-bottom-2">
+            <span class="text-primary">Help us eliminate</span>
+            <span class="text-secondary">the barriers preventing</span>
+            <span class="text-tertiary">all Chicago kids from</span>
+            <span>learning to code.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

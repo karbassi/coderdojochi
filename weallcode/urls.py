@@ -5,6 +5,7 @@ from django.views.generic import RedirectView
 
 from .views import (
     AssociateBoardView,
+    CareersView,
     CreditsView,
     HomeView,
     JoinUsView,
@@ -17,31 +18,57 @@ from .views import (
 )
 
 sitemaps = {
-    'static': StaticSitemapView,
+    "static": StaticSitemapView,
 }
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='weallcode-home'),
-    path('our-story/', OurStoryView.as_view(), name='weallcode-our-story'),
-    path('programs/', include([
-        path('', ProgramsView.as_view(), name='weallcode-programs'),
-        path('summer-camps/', ProgramsSummerCampsView.as_view(), name='weallcode-programs-summer-camps'),
-    ])),
-    path('team/', TeamView.as_view(), name='weallcode-team'),
-    path('join-us/', include([
-        path('', JoinUsView.as_view(), name='weallcode-join-us'),
-        path('associate-board/', AssociateBoardView.as_view(), name='weallcode-associate-board'),
-    ])),
-    path('privacy/', PrivacyView.as_view(), name='weallcode-privacy'),
-    path('credits/', CreditsView.as_view(), name='weallcode-credits'),
-
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-
+    path("", HomeView.as_view(), name="weallcode-home"),
+    path("our-story/", OurStoryView.as_view(), name="weallcode-our-story"),
+    path(
+        "programs/",
+        include(
+            [
+                path("", ProgramsView.as_view(), name="weallcode-programs"),
+                path(
+                    "summer-camps/",
+                    ProgramsSummerCampsView.as_view(),
+                    name="weallcode-programs-summer-camps",
+                ),
+            ]
+        ),
+    ),
+    path("team/", TeamView.as_view(), name="weallcode-team"),
+    path(
+        "join-us/",
+        include(
+            [
+                path("", JoinUsView.as_view(), name="weallcode-join-us"),
+                path(
+                    "associate-board/",
+                    AssociateBoardView.as_view(),
+                    name="weallcode-associate-board",
+                ),
+                path("careers/", CareersView.as_view(), name="weallcode-careers"),
+            ]
+        ),
+    ),
+    path("privacy/", PrivacyView.as_view(), name="weallcode-privacy"),
+    path("credits/", CreditsView.as_view(), name="weallcode-credits"),
+    path(
+        "sitemap.xml",
+        sitemap,
+        {"sitemaps": sitemaps},
+        name="django.contrib.sitemaps.views.sitemap",
+    ),
     # Redirect /summer-camps/ to weallcode-programs-summer-camps
-    path('summer-camps/', RedirectView.as_view(pattern_name='weallcode-programs-summer-camps')),
-
+    path(
+        "summer-camps/",
+        RedirectView.as_view(pattern_name="weallcode-programs-summer-camps"),
+    ),
     # Redirect /get-involved/ to weallcode-join-us
-    path('get-involved/', RedirectView.as_view(pattern_name='weallcode-join-us')),
+    path("get-involved/", RedirectView.as_view(pattern_name="weallcode-join-us")),
+    # Redirect /careers/ to weallcode-careers
+    path("careers/", RedirectView.as_view(pattern_name="weallcode-careers")),
 ]
 
-handler404 = 'weallcode.views.page_not_found_view'
+handler404 = "weallcode.views.page_not_found_view"
